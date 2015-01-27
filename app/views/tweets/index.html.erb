@@ -1,5 +1,5 @@
 <%= render :partial => 'shared/left_nav' %>
-<h4>Tweets</h4>
+<h4 class="content">Tweets</h4>
 <hr />
 <ol class="list-unstyled">
   <% @tweets.each do |tweet| %>
@@ -7,7 +7,7 @@
       <%= content_tag :strong, tweet.user.name %>
       <%= content_tag :small, "@"+tweet.user.username %>
       <%= content_tag :small, tweet.created_at.strftime("%b %-d") %>
-      <%= content_tag :p, tweet.content %>
+      <%= content_tag :p, tweet.content, :class => 'tweet-content' %>
     </li>
     <li><hr></li>
   <% end %>
